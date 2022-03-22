@@ -17,6 +17,10 @@ class Person {
   }
 }
 
-const person = new Person("Bob");
+//*NB : Ici selon la déclaration de votre méthode utilisée, votre mot-clef "this" sera redéfini ou non
+//* Les fonctions fléchées ne redéfinissent pas le this. Dans notre exemple, nous faisons bien reférence au this présent dans la classe
+//* Cependant avec la déclaration function, le this ici est redefini sur la portée global du fichier de
+
+const person = new Person('Bob');
 person.printNameArrow();
 person.printNameFunction();
