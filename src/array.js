@@ -1,46 +1,82 @@
 const panier = [
   {
     name: "Ordinateur",
-    prix: 1000,
+    price: 1000,
   },
   {
     name: "Chaise",
-    prix: 300,
+    price: 300,
   },
   {
     name: "Tapis",
-    prix: 60,
+    price: 60,
   },
   {
     name: "Souris",
-    prix: 100,
+    price: 100,
   },
   {
     name: "Ecran",
-    prix: 300,
+    price: 300,
   },
   {
     name: "Clavier",
-    prix: 350,
+    price: 350,
   },
 ];
 
-//TODO : Récupérer l'ensemble des prix dans un nouveau tableau
+//TODO : Récupérer l'ensemble des price dans un nouveau tableau
 
-//TODO: Récupérer l'ensemble des articles inférieur à 500$
+const prices = panier.map((item) => item.price);
+console.table(prices);
+
+//TODO: Récupérer l'ensemble des articles inférieur ou égal à 500$
+
+const lessThanOrEqual500 = panier.filter((item) => item.price <= 500);
+console.table(lessThanOrEqual500);
 
 //TODO: Récupérer le premier article à 300$
 
-//TODO: Afficher l'ensemble des noms d'article dans la consolet
+const firstArticle300 = panier.find((item) => item.price === 300);
+console.log(`Le premier article à 300$ est ${firstArticle300}`);
 
-//TODO: Affirmer s'il existe des articles avec un prix supérieur à 600$
+//TODO: Afficher l'ensemble des noms d'article dans la console
+
+console.log("///////////////////////////////////////////////////////////////");
+console.log("Liste d'articles présent dans le panier");
+panier.forEach((item) => console.log(item.name));
+console.log("///////////////////////////////////////////////////////////////");
+
+//TODO: Affirmer s'il existe des articles avec un price supérieur à 600$
+
+const atLeastOneArticleGreaterThan600 = panier.some((item) => item.price > 600);
+console.log(
+  atLeastOneArticleGreaterThan600
+    ? "Au moins un article détient un prix supérieur à 600"
+    : "Aucun article détient un prix supérieur à 600"
+);
 
 //TODO: Affirmer si tous les articles sont supérieur à 100$
 
-//TODO: Calculer le prix total du panier
+const everyArticlesGreaterThan100 = panier.every((item) => item.price > 100);
+console.log(
+  everyArticlesGreaterThan100
+    ? "Tous les articles détiennent un prix supérieur à 100"
+    : "Aucun article de tous les articles présent dans le panier ne détient un prix supérieur à 100"
+);
 
-//TODO: Affirmer si une lampe est inclus dans le panier
+//TODO: Calculer le price total du panier
+
+const total = panier.reduce((sum, item) => sum + item.price, 0);
+console.log(`Le total du panier est de ${total}`);
 
 const simpleArray = [1, 3, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 //TODO: Vérifier si le tableau simple inclut la valeur 10
+
+const includes10 = simpleArray.includes(10);
+console.log(
+  includes10
+    ? "10 est inclus dans le tableau"
+    : "10 n'est pas inclus dans le tableau"
+);
