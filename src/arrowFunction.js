@@ -13,8 +13,8 @@ function isPositiveNumber(number) {
   return number >= 0;
 }
 
-function randomNumber() {
-  return Math.random;
+function randomNumber(number) {
+  return Math.random(number);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
