@@ -23,16 +23,16 @@ const isPositiveNumber = (number) => number >= 0;
 
 /////////////////////////////////////////////////////////////
 
-// function randomNumber() {
-//   return Math.random;
+// function randomNumber(number) {
+//   return Math.random(number);
 // }
-const randomNumber = () => Math.random;
+const randomNumber = (number) => Math.random(number);
 
 /////////////////////////////////////////////////////////////
 
 // document.addEventListener('DOMContentLoaded', function () {
 //   console.log('DOMContentLoaded');
 // });
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOMContentLoaded');
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOMContentLoaded");
 });
